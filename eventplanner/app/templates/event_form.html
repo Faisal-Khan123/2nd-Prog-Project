@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% if event %}Update{% else %}Add{% endif %} Event</h2>
+<form action="{% if event %}{{ url_for('main.update_event', event_id=event.id) }}{% else %}{{ url_for('main.add_event') }}{% endif %}" method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{ event.title if event else '' }}" required><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="{{ event.date if event else '' }}" required><br>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" value="{{ event.location if event else '' }}" required><br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description">{{ event.description if event else '' }}</textarea><br>
+    <button type="submit">{% if event %}Update{% else %}Add{% endif %} Event</button>
+</form>
+{% endblock %}

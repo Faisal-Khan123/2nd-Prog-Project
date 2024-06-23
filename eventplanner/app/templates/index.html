@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+           
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .navbar-nav {
+            margin: 0 auto; /* Center-align navbar items */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar-nav .nav-item {
+            padding: 0 20px; /* Optional: Add padding between navbar items */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-body {
+            text-align: center;
+        }
+        .no-events {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #6c757d;
+        }
+        .registration-message {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #28a745;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Event Planner</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{{ url_for('main.login_form') }}">Login to Add, Update or Delete events</a>
+            <a class="nav-item nav-link" href="{{ url_for('main.feedback_form') }}">Leave Feedback</a>
+            <a class="nav-item nav-link" href="{{ url_for('main.show_feedbacks') }}">View Feedback Surveys</a>
+            <a class="nav-item nav-link" href="{{ url_for('main.stats') }}">Stats Chart</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% if events %}
+            <div class="row">
+                <h2 style="margin-left: 30%">Following Events Are Available</h2><br><br>
+                {% for event in events %}
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.title }}</h5>
+                                <p class="card-text">{{ event.description }}</p>
+                                <p class="card-text"><small class="text-muted">{{ event.date.strftime('%Y-%m-%d %H:%M') }}</small></p>
+                                <p class="card-text"><small class="text-muted">{{ event.location }}</small></p>
+                                <button class="btn btn-primary" onclick="registerForEvent({{ event.id }})">Register for Event</button>
+                                <p id="message-{{ event.id }}" class="registration-message">You have been registered for this event!</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-events">No active events at the moment. Check back soon!</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function registerForEvent(eventId) {
+            var email = prompt("Please enter your email:");
+            if (email) {
+                document.getElementById(`message-${eventId}`).style.display = 'block';
+                alert("You have been registered for the event!");
+            }
+        }
+    </script>
+</body>
+</html>
