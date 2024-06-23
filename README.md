@@ -7,32 +7,33 @@ An application that is focused on APIs, the Community Event Planner helps with t
    python -m venv venv
    ```   
 2. In `2nd-Prog-Project/`, activate the virtual environment using:
-    -Windows
-    ```sh
-    scripts\activate
-    ```
-    -macOS and Linux
-    ```sh
-    source venv/bin/activate
-    ```
-3. Then install all dependencies using (It might take some time. Some of the versions may be different on your device so just install the appropriate version):
+    - On Windows:
+        ```sh
+        venv\Scripts\activate
+        ```
+
+    - On macOS and Linux:
+        ```sh
+        source venv/bin/activate
+        ```
+4. Then install all dependencies using (It might take some time. Some of the versions may be different on your device so just install the appropriate version):
     ```sh
     pip install -r requirements.txt
     ```
-4. Move to the `eventplanner` folder:
+5. Move to the `eventplanner` folder:
     ```sh
     cd eventplanner
     ```
-5. In `eventplanner/app/instance/`:
+6. In `eventplanner/app/instance/`:
     - Right click the `eventplanner.sqlite3` file and copy the path.
       
-6. Replace it with the path in `app/init.py` where the path of my database is mentioned. Replace it after `sqlite:///` and invert the slashes like convert `\` to `/` in the path.
+7. Replace it with the path in `app/init.py` where the path of my database is mentioned. Replace it after `sqlite:///` and invert the slashes like convert `\` to `/` in the path.
    
-7. Move back to `cmd` and inside `eventplanner/` run the following:
+8. Move back to `cmd` and inside `eventplanner/` run the following:
     ```sh
     python run.py
     ```
-8. Open your web browser and navigate to:
+9. Open your web browser and navigate to:
     ```
     http://127.0.0.1:5000/
     ```
