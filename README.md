@@ -2,8 +2,10 @@
 An application that is focused on APIs, the Community Event Planner helps with the planning and administration of community events. This platform offers tools for organising, managing participation, and advertising a range of events, including workshops, cultural festivals, sporting events, and educational seminars. It provides adaptable APIs that may be incorporated into various platforms to satisfy certain requirements. With the help of this platform, community organisers may plan and carry out events with ease while actively involving the community. It also facilitates simplified participant registration, and thorough feedback collecting.
 ## Installation
 
-1. After cloning, move to the `2nd-Prog-Project` folder on `cmd`.
-   
+1. After cloning, move to the `2nd-Prog-Project` folder on `cmd` and create the virtual environment.
+   ```sh
+   python -m venv venv
+   ```   
 3. In `2nd-Prog-Project/`, activate the virtual environment using:
     ```sh
     scripts\activate
@@ -16,20 +18,16 @@ An application that is focused on APIs, the Community Event Planner helps with t
     ```sh
     cd eventplanner
     ```
-6. Move to the `eventplanner` folder again:
-    ```sh
-    cd eventplanner
-    ```
-7. In code inside `eventplanner/eventplanner/app/instance/`:
-    - Right click the `sqlite` file there and copy the path.
+6. In `eventplanner/eventplanner/app/instance/`:
+    - Right click the `eventplanner.sqlite3` file and copy the path.
       
-8. Replace it with the path in `app/init.py` where the path of my database is mentioned. Replace it after `sqlite:///` and invert the slashes like convert `\` to `/` in the path.
+7. Replace it with the path in `app/init.py` where the path of my database is mentioned. Replace it after `sqlite:///` and invert the slashes like convert `\` to `/` in the path.
    
-9. Move back to `cmd` and inside `eventplanner/eventplanner` run the following:
+8. Move back to `cmd` and inside `eventplanner/eventplanner` run the following:
     ```sh
     python run.py
     ```
-10. Open your web browser and navigate to:
+9. Open your web browser and navigate to:
     ```
     http://127.0.0.1:5000/
     ```
