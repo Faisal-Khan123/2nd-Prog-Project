@@ -10,7 +10,7 @@ An application that is focused on APIs, the Community Event Planner helps with t
     ```sh
     scripts\activate
     ```
-4. Then install all dependencies using (It might take some time):
+4. Then install all dependencies using (It might take some time. Some of the versions may be different on your device so just install the appropriate version):
     ```sh
     pip install -r requirements.txt
     ```
