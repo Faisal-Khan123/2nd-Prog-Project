@@ -31,3 +31,44 @@ An application that is focused on APIs, the Community Event Planner helps with t
     ```
     http://127.0.0.1:5000/
     ```
+## Target Audience
+
+- Companies
+- NGOs
+- Businesses
+- Government departments
+
+## Summary of Key Elements
+
+1. **Organizing and managing events:**
+   - Add, update, and remove events with specifics like the date, time, and place.
+   - Organize the use of resources, such as equipment and locations.
+
+2. **Participants**
+   - Online registration is available for participants in events.
+   - Automated email or SMS ticketing and reminder system.
+
+3. **Feedback Gathering:**
+   - Inbuilt feedback forms and post-event surveys on the platform.
+
+4. **Analytics and Reporting:**
+   - To help with future event planning, create reports on participant satisfaction, attendance, and other indicators.
+
+## Networking Features
+
+- **RESTful API:** To manage requests for generating, obtaining, editing, and removing event data from the client and server.
+- **Safe User Authentication:** Use HTTPS to provide safe application access.
+- **Form Data:** Form data is sent from the client to the server via HTTP POST requests, where it is processed and saved in the database.
+- **Data Retrieval:** To retrieve raw data from the server for report creation, use HTTP GET requests.
+
+## Database
+
+- **Details of the event:** Keep track of all event-related information, such as times, locations, and relevant resources.
+- **User Data:** Organize user profiles and registration details.
+- **Feedback and Analytics:** Keep collecting feedback after the event and provide analytics to reveal areas that worked well and those that may use better.
+
+## External Libraries
+
+- **Flask:** Because of its ease of use and versatility, Flask is a micro web framework for Python that is used to develop API servers.
+- **SQLAlchemy:** ORM library for effectively managing all PostgreSQL database interactions.
+- **SQLite:** Will be used in this project to store participant and event data.
