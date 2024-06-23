@@ -18,12 +18,12 @@ An application that is focused on APIs, the Community Event Planner helps with t
     ```sh
     cd eventplanner
     ```
-6. In `eventplanner/eventplanner/app/instance/`:
+6. In `eventplanner/app/instance/`:
     - Right click the `eventplanner.sqlite3` file and copy the path.
       
 7. Replace it with the path in `app/init.py` where the path of my database is mentioned. Replace it after `sqlite:///` and invert the slashes like convert `\` to `/` in the path.
    
-8. Move back to `cmd` and inside `eventplanner/eventplanner` run the following:
+8. Move back to `cmd` and inside `eventplanner/` run the following:
     ```sh
     python run.py
     ```
